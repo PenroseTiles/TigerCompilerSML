@@ -1,0 +1,16 @@
+fun f (dec as {name=n, ty=t, pos=p}, tenv) = 1
+
+fun makeList A.RecordTy(fieldlist) =
+    let val uniq = ref ()
+	fun g () =
+	    let fun mapper {name=subname,escape=e, typ=t, pos=p} =
+		    if t=name then Types.RECORD(g, unique)
+		    else
+			valOf()
+	    in
+		map mapper fieldlist
+	    end
+    in
+	Types.RECORD(g, unique)
+    end
+	

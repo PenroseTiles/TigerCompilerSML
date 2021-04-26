@@ -1,0 +1,8 @@
+let
+	var N := 5
+	function try (c:int) =
+		 (for i:=0 to N-1
+		      do c := c+1)
+in
+	try(1)
+end

@@ -1,0 +1,12 @@
+/* error : type mismatch */
+
+let 
+	type rectype = {name:string , id:int}
+	var rec1 := rectype {name="this is a double quote ->\" \ 
+
+
+\, id=0}
+in
+	rec1.name := 3;
+	rec1.id := 0 
+end

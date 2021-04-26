@@ -1,0 +1,28 @@
+(*    datatype flowgraph = FGRAPH of {control: Graph.graph,
+def: Temp.temp list Graph.Table.table, use: Temp.temp list Graph.Table.table, ismove: bool Graph.Table.table}
+type 'a node = (nodeID * 'a * NodeSet.set * NodeSet.set)
+type 'a graph = 'a node NodeMap.map
+type 'a edge = {from: nodeID, to: nodeID} *)
+signature MakeGraph:
+sig
+    val instrs2graph: Assem.instr list -> Flow.flowgraph * Flow.graph.node list
+end
+
+structure FlowGraphGenerator:>MakeGraph=
+struct
+structure InstGraph = Assem.instr FuncGraph(struct type ord_key=int
+						   val compare =Int.compare
+					    end)
+			       
+fun instrs2graph ([])=(FGRAPH{control=FuncGraph.newGraph(),
+			      def=FuncGraph.Table.empty,
+			      use=FuncGraph.Table.empty,
+			      ismove=FuncGraph.table.empty}, [])
+  | instrs2graph (inslist) =
+    let 
+    in
+    end
+				 
+end
+    
+	  

@@ -1,0 +1,6 @@
+let
+	var a:=10
+	var b:= 20
+in
+	if (a > b) then 30 else 40
+end

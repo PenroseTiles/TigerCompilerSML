@@ -1,0 +1,4 @@
+let function id(a:int):int =a
+in
+id(1)
+end

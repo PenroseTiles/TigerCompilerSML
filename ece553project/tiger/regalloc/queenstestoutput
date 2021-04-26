@@ -1,0 +1,188 @@
+function: try
+SEQ(
+ SEQ(
+  MOVE(
+   MEM(
+    BINOP(PLUS,
+     TEMP t10405,
+     CONST ~12)),
+   TEMP t10425),
+  SEQ(
+   MOVE(
+    MEM(
+     BINOP(PLUS,
+      TEMP t10405,
+      CONST ~16)),
+    TEMP t10426),
+   SEQ(
+    MOVE(
+     MEM(
+      BINOP(PLUS,
+       TEMP t10405,
+       CONST ~20)),
+     TEMP t10427),
+    SEQ(
+     MOVE(
+      MEM(
+       BINOP(PLUS,
+        TEMP t10405,
+        CONST ~24)),
+      TEMP t10428),
+     SEQ(
+      MOVE(
+       MEM(
+        BINOP(PLUS,
+         TEMP t10405,
+         CONST ~28)),
+       TEMP t10429),
+      SEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t10405,
+          CONST ~32)),
+        TEMP t10430),
+       SEQ(
+        MOVE(
+         MEM(
+          BINOP(PLUS,
+           TEMP t10405,
+           CONST ~36)),
+         TEMP t10431),
+        SEQ(
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t10405,
+            CONST ~40)),
+          TEMP t10432),
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t10405,
+            CONST ~44)),
+          TEMP t10407))))))))),
+
+
+SEQ(
+  SEQ(
+   MOVE(
+    MEM(
+     BINOP(PLUS,
+      TEMP t10405,
+      CONST 0)),
+    TEMP t10414),
+
+
+   MOVE(
+    TEMP t10406,
+    ESEQ(
+     MOVE(
+      MEM(
+       ESEQ(
+        SEQ(
+         CJUMP(LT,
+          CONST 3,
+          MEM(
+           BINOP(MINUS,
+            MEM(
+             BINOP(PLUS,
+              MEM(
+               TEMP t10405),
+              CONST ~8)),
+            CONST 4)),
+          Label14802,Label14803),
+         SEQ(
+          LABEL Label14802,
+          SEQ(
+           MOVE(
+            TEMP t10508,
+            MEM(
+             BINOP(PLUS,
+              MEM(
+               BINOP(PLUS,
+                MEM(
+                 TEMP t10405),
+                CONST ~8)),
+              BINOP(MUL,
+               CONST 3,
+               CONST 4)))),
+           SEQ(
+            JUMP(
+             NAME Label14804),
+            SEQ(
+             LABEL Label14803,
+             SEQ(
+              EXP(
+               CALL(
+                NAME exit,
+                 CONST 0)),
+              LABEL Label14804)))))),
+        TEMP t10508)),
+      CONST 1),
+     CONST 0))),
+
+
+
+SEQ(
+   MOVE(
+    TEMP t10425,
+    MEM(
+     BINOP(PLUS,
+      TEMP t10405,
+      CONST ~12))),
+   SEQ(
+    MOVE(
+     TEMP t10426,
+     MEM(
+      BINOP(PLUS,
+       TEMP t10405,
+       CONST ~16))),
+    SEQ(
+     MOVE(
+      TEMP t10427,
+      MEM(
+       BINOP(PLUS,
+        TEMP t10405,
+        CONST ~20))),
+     SEQ(
+      MOVE(
+       TEMP t10428,
+       MEM(
+        BINOP(PLUS,
+         TEMP t10405,
+         CONST ~24))),
+      SEQ(
+       MOVE(
+        TEMP t10429,
+        MEM(
+         BINOP(PLUS,
+          TEMP t10405,
+          CONST ~28))),
+       SEQ(
+        MOVE(
+         TEMP t10430,
+         MEM(
+          BINOP(PLUS,
+           TEMP t10405,
+           CONST ~32))),
+        SEQ(
+         MOVE(
+          TEMP t10431,
+          MEM(
+           BINOP(PLUS,
+            TEMP t10405,
+            CONST ~36))),
+         SEQ(
+          MOVE(
+           TEMP t10432,
+           MEM(
+            BINOP(PLUS,
+             TEMP t10405,
+             CONST ~40))),
+          MOVE(
+           TEMP t10407,
+           MEM(
+            BINOP(PLUS,
+             TEMP t10405,
+             CONST ~44)))))))))))))

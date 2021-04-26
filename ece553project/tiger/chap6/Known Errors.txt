@@ -1,0 +1,4 @@
+Test 17: No error thrown for interrupted declaration of recursive types
+Test 28: No error thrown for different types
+Test 29: Wrong error thrown, different types
+Test 42: All legal, but many errors

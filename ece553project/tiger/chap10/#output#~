@@ -1,0 +1,14 @@
+Label14
+addi t131, r0,10
+addi t132, r0,20
+bgt t131, t132 Label10
+Label11
+addi t133, r0,40
+move t130, t133
+Label12
+move rv, t130
+jump Label13
+Label10
+addi t134, r0,30
+move t130, t134
+jump Label12

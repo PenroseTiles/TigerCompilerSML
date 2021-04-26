@@ -1,0 +1,2 @@
+Skeleton 5
+d5Cf6d"FG"Cd"Assem"d"Temp"d"List"d"Int"d"Bool"Naã¢REG_ALLOC"è±áä¢Frame"çð±ã¢FRAME"aã¢COLOR"ÿ<ad"RegAllocColor"jh1áÿ?çð±ä¢MipsFrame"gp1ÿad"MipsRegAlloc"jh3ÿ1aä¢Liveness"gp1ÿ‚ ad"MakeGraphGenerator"gp1d"FlowGraphGenerator"gp1ÿ0N

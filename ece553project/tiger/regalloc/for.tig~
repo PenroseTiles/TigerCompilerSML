@@ -1,0 +1,9 @@
+let
+	var N := 8
+	function try (c:int):int =c+N
+	function id(c:int): int = c
+
+in
+	id(N);
+	try(1)
+end

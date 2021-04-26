@@ -1,0 +1,8 @@
+/* locals hide globals */
+let
+	var a:int := 7
+	function g(a:int):int = a
+in
+ /*g(b)*/
+ g(a)
+end

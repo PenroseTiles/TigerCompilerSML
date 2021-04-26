@@ -1,0 +1,17 @@
+(*    datatype flowgraph = FGRAPH of {control: Graph.graph,
+				    def: Temp.temp list Graph.Table.table,
+				    use: Temp.temp list Graph.Table.table,
+				    ismove: bool Graph.Table.table}
+
+ *)
+signature MakeGraph:
+sig
+    val instrs2graph: Assem.instr -> Flow.flowgraph * Flow.graph.node list
+end
+
+structure GraphMaker=
+struct
+
+end
+    
+	  

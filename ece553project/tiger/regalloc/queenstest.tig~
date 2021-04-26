@@ -1,0 +1,21 @@
+/* A program to solve the 8-queens problem */
+
+let
+    var N := 4
+
+    type intArray = array of int
+
+    var row := intArray [ N ] of 0
+    
+
+   
+    function try() = 
+
+     
+	          row[0]:=1;
+
+)
+ in try()
+end
+
+	

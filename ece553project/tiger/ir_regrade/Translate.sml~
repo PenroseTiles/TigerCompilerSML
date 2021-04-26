@@ -1,0 +1,50 @@
+signature TRANSLATE =
+sig
+    type level
+    type access
+
+    val outermost: level (*level within which the a program is nested*)
+    val newLevel: {parent:level, name:Temp.label, formals: bool list} -> level
+									      
+    val formals: level -> access list
+    val allocLocal: level -> bool -> access
+end
+
+structure Translate : TRANSLATE =
+struct
+type access = level * Frame.access
+datatype level = top
+	       | otherLevel of {parent: level, frame: Frame.frame, unique: unit ref}
+val outermost = top
+(*pg 141 for newLevel function creates new nesting level for each function; calls Frame.newFrame to make a new frame*)	    
+fun newLevel({parent, name, formals}) =
+    let
+	val newformals = true::formals
+    in
+	otherLevel({
+	    parent= parent,
+	    frame=Frame.newFrame{name = name, formals = newformals},
+	    unique = ref ()})
+    end
+(*pg 142 for allocLocal; creates variable at argument level; returns a Translate.access; calls Frame.allocLocal *)
+fun allocLocal(levelArg, escapeArg)=
+    case levelArg of
+	top => Err.error 0 "Error: Cannot process a local variable declaration at the top level"
+      | otherLevel({parent = parentArg, frame = frameArg, unique=uniqueArg}) =>
+	(otherLevel({parent = parentArg, frame = frameArg, unique=uniqueArg}), Frame.allocLevel(frameArg, escapeArg))
+	    
+end
+
+(*pg 143. formals converts offsets given in levels to access values; access offset values by called Frame.formals(frame)*)
+fun formals top = []
+  | formals (l as otherlevel({parent = parentArg, frame = frameArg, unique = uniqueArg})) =
+    let
+	val accessLeveLList = [];
+	val frameFormals = Frame.formals(frameArg);
+	fun getAccessLevel(frameAccess, accesslist) = (l, frameAccess) :: accesslist (*adds access (level * Frame.access) to accesslist*)
+    in
+	foldl getAccessLevel accessLevelList frameFormals;
+    end
+end
+
+end

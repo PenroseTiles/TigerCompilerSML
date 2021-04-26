@@ -1,0 +1,29 @@
+structure MipsFrame : FRAME =
+struct
+datatype frame = Frame of {label: Temp.label, formals: access list, numAlloc: int ref}
+datatype access = InFrame of int | InReg of Temp.temp
+
+fun newFrame(name: Temp.label, formals: bool list) = let
+    val numArgsProcessed = ref 0
+    fun putFormals(b) = if b == true then !numArgsProcessed = !numArgsProcessed + 1; InFrame(-4*numArgsProcessed) else InReg(Temp.newtemp())
+    fun createAccess() = map putFormals formals
+in
+    {name, createAccess(), numArgsProcessed}
+end
+							 
+
+fun name(frame) = #label frame
+
+fun formals(frame) = #formals frame
+
+fun allocLocal(frame{label, formals, numAlloc}, escape) = let
+    fun helper {label = l, formals = a::b , numAlloc:x} = !x = !x+1; 
+in
+    if escape == true then helper(frame); InFrame(-4*(!numAlloc - 1)) else InReg(Temp.newtemp())
+end
+				    
+							   
+(* InFrame(0), InReg(t157), InReg(t158), sp <- sp-K, M[sp+K+0] <- r2, t157 <- r4, t158 <- r5 *)
+					
+end
+    

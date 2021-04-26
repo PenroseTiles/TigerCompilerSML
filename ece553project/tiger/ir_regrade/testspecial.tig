@@ -1,0 +1,10 @@
+/* define valid recursive types */
+let
+/* define a list */
+type rec = {name: string, age: b}
+type b = int
+var arg: rec := rec {name = "Bob", age = 5}
+
+in
+	arg
+end
